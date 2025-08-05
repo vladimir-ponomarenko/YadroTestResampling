@@ -25,15 +25,26 @@ double* interpolate_2x(const double* input_arr, size_t input_size, size_t* new_s
         return output_arr;
     }
 
+    #pragma omp parallel for
+    for (size_t i = 0; i < input_size; i++) {
+        output_arr[i * 2] = input_arr[i];
+    }
+
+    #pragma omp parallel for
+    for (size_t i = 0; i < input_size - 1; i++) {
+        output_arr[i * 2 + 1] = (input_arr[i] + input_arr[i + 1]) / 2.0;
+    }
+
+/*
     size_t j = 0;
     for (size_t i = 0; i < *new_size; ++i) {
-        if (i % 2 == 0) {
+       if (i % 2 == 0) {
             output_arr[i] = input_arr[j];
             j++;
         } else {
             output_arr[i] = (input_arr[j-1] + input_arr[j]) / 2.0;
         }   
     }
-    
+*/
     return output_arr;
 }

@@ -3,11 +3,12 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <omp.h>
 
 
 const char* test_sine_generator_at_zero();
 const char* test_sine_generator_at_one();
-const char* test_interpolate_2x();
+const char* test_interpolate_2x_return_arr();
 const char* test_interpolate_2x_zeros();
 const char* test_interpolate_2x_case_arr1();
 const char* test_interpolate_2x_case_arr2();
