@@ -10,11 +10,12 @@
 extern "C" {
 #endif
 
-const double PI = 3.1415926535898;
-const int SAMPLING_RATE_HZ = 100;
-const double AMPLITUDE = 1;
+extern const double PI;
+extern const int SAMPLING_RATE_HZ;
+extern const double AMPLITUDE;
 
 double dsp_sine_sample(double freq, double fs, size_t n);
+double* interpolate_2x(const double* input_arr, size_t input_size, size_t* new_size);
 
 #ifdef __cplusplus
 }

@@ -6,9 +6,14 @@ int tests_failed = 0;
 int main(int argc, char const *argv[])
 {
 
-    printf("Starting tests...\n");
+    printf("Starting tests...\n\n");
+    
     RUN_TEST(test_sine_generator_at_zero);
     RUN_TEST(test_sine_generator_at_one);
+    RUN_TEST(test_interpolate_2x_return_arr);
+    RUN_TEST(test_interpolate_2x_zeros);
+    RUN_TEST(test_interpolate_2x_case_arr1);
+    RUN_TEST(test_interpolate_2x_case_arr2);
 
     printf("\n--- Test Summary ---\n");
     if (tests_failed == 0) {
