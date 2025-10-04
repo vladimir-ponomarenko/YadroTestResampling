@@ -2,6 +2,7 @@
 
 int main(int argc, char const *argv[])
 {
-    fprintf(stdout, "Hello, world!\n");
+    run_dsp_pipeline();
+
     return 0;
 }
